@@ -120,11 +120,12 @@ console.log(!hasID); // false — กลับค่า
 ### Short-circuit Evaluation
 
 ```js
-// && — ถ้าฝั่งซ้ายเป็น false จะไม่ประเมินฝั่งขวา
+// && — ซ้ายต้อง true ถึงจะทำฝั่งขวา
+console.log(true && console.log("ไม่ถูกเรียก")); // ไม่ถูกเรียก
 console.log(false && console.log("ไม่ถูกเรียก")); // false
-
-// || — ถ้าฝั่งซ้ายเป็น true จะไม่ประเมินฝั่งขวา
+// || — ซ้ายต้อง falsy (0, "", false, null, undefined) ถึงจะทำฝั่งขวา
 console.log(true || console.log("ไม่ถูกเรียก")); // true
+console.log(false || console.log("ไม่ถูกเรียก")); // ไม่ถูกเรียก
 
 // ใช้กำหนดค่า default
 const username = null;
@@ -141,6 +142,7 @@ console.log(displayName); // "ผู้เยี่ยมชม"
 ```js
 const score = 0;
 
+// ?? — ซ้ายต้อง null/undefined ถึงจะทำฝั่งขวา
 console.log(score || 100); // 100 ⚠️ — 0 เป็น falsy จึงใช้ค่า fallback
 console.log(score ?? 100); // 0   ✅ — 0 ไม่ใช่ null/undefined
 

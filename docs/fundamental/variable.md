@@ -30,7 +30,7 @@ console.log(name); // "สมศรี"
 
 ### พฤติกรรม Hoisting
 
-```js
+```jscxzc
 console.log(age); // undefined (ไม่ error)
 var age = 25;
 ```
@@ -38,7 +38,7 @@ var age = 25;
 JavaScript ตีความโค้ดข้างต้นเป็น:
 
 ```js
-var age;
+var age; // Hoist ไปด้านบนของ scope อัตโนมัติ แต่ค่าจะยังไม่ถูกกำหนด
 console.log(age); // undefined
 age = 25;
 ```

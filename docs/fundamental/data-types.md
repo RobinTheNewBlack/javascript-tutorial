@@ -38,6 +38,8 @@ console.log(text.toUpperCase()); // "HELLO WORLD"
 console.log(text.toLowerCase()); // "hello world"
 console.log(text.includes("World")); // true
 console.log(text.slice(0, 5)); // "Hello"
+console.log(text.replace("World", "JavaScript")); // "Hello JavaScript"
+console.log(text.split(" ")); // ["Hello", "World"]
 ```
 
 ---
