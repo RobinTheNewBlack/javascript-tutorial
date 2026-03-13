@@ -22,3 +22,11 @@
 - [Object Methods](docs/data-manipulation/object-methods.md)
 - [Destructuring](docs/data-manipulation/destructure.md)
 - [Spread & Rest Operators](docs/data-manipulation/spread-rest.md)
+
+## 3.Function
+
+- [Function](docs/function/function.md)
+
+## 4.Object-Oriented Programming
+
+- [Class](docs/oop/oop.md)
