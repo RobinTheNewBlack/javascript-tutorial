@@ -38,20 +38,20 @@
 // console.log(map);
 // console.log("=================================")
 
-const scores = new Map([
-  ["Alice", 90],
-  ["Bob", 85],
-  ["Charlie", 92]
-]);
-console.log(scores)
+// const scores = new Map([
+//   ["Alice", 90],
+//   ["Bob", 85],
+//   ["Charlie", 92]
+// ]);
+// console.log(scores)
 
-scores.forEach((value, key) => {
-  console.log(`${key}: ${value}`);
-});
+// scores.forEach((value, key) => {
+//   console.log(`${key}: ${value}`);
+// });
 
-for (const [key, value] of scores) {
-  console.log(`${key}: ${value}`);
-}
+// for (const [key, value] of scores) {
+//   console.log(`${key}: ${value}`);
+// }
 // scores.forEach((value, key) => {
 //   console.log(`${key}: ${value}`);
 // });
@@ -173,3 +173,101 @@ for (const [key, value] of scores) {
 // strMOck.forEach((char) => {
 //   console.log(char);
 // });
+
+// const score = 85;
+
+// switch (score) {
+//   case score >= 90:
+//     console.log("Grade: A");
+//     break;
+//   case score >= 80:
+//     console.log("Grade: B");
+//     break;
+//   case score >= 70:
+//     console.log("Grade: C");
+//     break;
+//   case score >= 60:
+//     console.log("Grade: D");
+//     break;
+//   default:
+//     console.log("Grade: F");
+// }
+
+// for (let i = 0; i < 5; i++) {
+//   console.log(i);
+// }
+
+// for (let i = 5; i >= 0; i--) {
+//   console.log(i);
+// }
+
+// const fruits = ["Apple", "Banana", "Cherry"];
+
+// for (let i = 0; i < fruits.length; i++) {
+//   console.log(fruits[i]);
+// }
+
+// for (const fruit of fruits) {
+//   console.log(fruit);
+// }
+
+// let count = 0;
+
+// while (count < 5) {
+//   console.log(count);
+//   count++;
+// }
+
+// const arr = [1, 2, 3, 4, 5];
+// console.log(arr.entries());
+// for (const [i, j] of arr.entries()) {
+//   console.log(i, j);
+// }
+
+// const person = {
+//   name: "John",
+//   age: 30,
+//   city: "New York"
+// }
+
+// for (const key in person) {
+//   console.log(`${key}: ${person[key]}`);
+// }
+
+// const numbers = [1, 2, 3, 4, 5];
+// const newArr = []
+
+// numbers.forEach((num) => {
+//   newArr.push(num * 2);
+// });
+// console.log(newArr)
+
+// const numbers2x = numbers.map((num) => num * 2)
+// console.log(numbers2x)
+
+// const sum = numbers.reduce((acc, num) => {
+//   return acc + num;
+// }, 0);
+// console.log(sum)
+
+// const scores = [45, 72, 88, 55, 91];
+
+// const passed = scores.filter(score => score >= 60);
+// console.log(passed)
+
+// const users = [
+//   { id: 1, name: "สมชาย" },
+//   { id: 2, name: "สมหญิง" },
+//   { id: 2, name: "สมชิน" },
+//   { id: 3, name: "สมศรี" },
+// ];
+
+// const user = users.find(user => user.id === 2);
+// console.log(user)
+
+const ages = [15, 22, 18, 30];
+
+const hasChild = ages.some(age => age < 18);
+const allAdults = ages.every(age => age >= 18);
+console.log(hasChild)
+console.log(allAdults)
