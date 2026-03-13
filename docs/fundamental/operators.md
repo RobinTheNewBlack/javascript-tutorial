@@ -119,19 +119,32 @@ console.log(!hasID); // false — กลับค่า
 
 ### Short-circuit Evaluation
 
-```js
-// && — ซ้ายต้อง true ถึงจะทำฝั่งขวา
-console.log(true && console.log("ไม่ถูกเรียก")); // ไม่ถูกเรียก
-console.log(false && console.log("ไม่ถูกเรียก")); // false
-// || — ซ้ายต้อง falsy (0, "", false, null, undefined) ถึงจะทำฝั่งขวา
-console.log(true || console.log("ไม่ถูกเรียก")); // true
-console.log(false || console.log("ไม่ถูกเรียก")); // ไม่ถูกเรียก
+คือ พฤติกรรมของ logical operators (&& และ ||) ที่จะ หยุดประเมินค่าทันทีที่รู้ผลลัพธ์แล้ว โดยไม่ต้องดูค่าที่เหลือ
 
-// ใช้กำหนดค่า default
-const username = null;
-const displayName = username || "ผู้เยี่ยมชม";
-console.log(displayName); // "ผู้เยี่ยมชม"
-```
+- && (AND)
+    - ซ้ายต้อง true/truthy ถึงจะทำฝั่งขวา
+    - ถ้าตัวแรกเป็น false/falsy (0, "", false, null, undefined) จะ return ค่าตัวแรกเลย ไม่ดูตัวหลัง
+
+    ```js
+    console.log(true && console.log("ไม่ถูกเรียก")); // ไม่ถูกเรียก
+    console.log(false && console.log("ไม่ถูกเรียก")); // false
+    // ใช้ && แทน if สั้นๆ — ถ้า user มีค่า ถึงจะเรียก greet()
+    user && greet(user);
+    ```
+
+- || (OR)
+    - ซ้ายต้อง false/falsy ถึงจะทำฝั่งขวา
+    - ถ้าตัวแรกเป็น truthy จะ return ค่าตัวแรกเลย ไม่ดูตัวหลัง
+    ```js
+    console.log(true || console.log("ไม่ถูกเรียก")); // true
+    console.log(false || console.log("ไม่ถูกเรียก")); // ไม่ถูกเรียก
+    // ใช้ || กำหนด default value — ถ้า username เป็น falsy จะใช้ "ผู้เยี่ยมชม" แทน
+    const username = null;
+    const displayName = username || "ผู้เยี่ยมชม";
+    console.log(displayName); // "ผู้เยี่ยมชม"
+    ```
+
+    - ข้อควรระวัง: || จะ fallback เมื่อเจอ falsy ทุกตัว (0, "", null, undefined, false) ถ้าอยากให้ fallback เฉพาะ null/undefined ให้ใช้ nullish coalescing (??) แทน
 
 ---
 
@@ -154,7 +167,7 @@ console.log(name ?? "ไม่ระบุชื่อ"); // "ไม่ระบ
 
 ## 6. Optional Chaining Operator `?.` (ES2020)
 
-ใช้เข้าถึง property ของ object โดยไม่ต้องกลัว error เมื่อค่าเป็น `null` หรือ `undefined`
+`?.` ช่วยให้เข้าถึง property ของ object ที่อาจเป็น `null` หรือ `undefined` ได้อย่างปลอดภัย โดย ไม่ throw error — ถ้าค่าก่อนหน้า `?.` เป็น nullish จะ return `undefined` ทันทีแทนที่จะพังเอา
 
 ```js
 const user = {

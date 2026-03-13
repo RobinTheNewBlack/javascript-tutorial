@@ -30,6 +30,7 @@
 // const map = new Map();
 // map.set("name", "Alice");
 // map.set("age", 25);
+// console.log(...map)
 // console.log(map);
 // console.log(map.get("name"));
 // console.log(map.has("age"));
@@ -37,20 +38,20 @@
 // console.log(map);
 // console.log("=================================")
 
-// const scores = new Map([
-//   ["Alice", 90],
-//   ["Bob", 85],
-//   ["Charlie", 92]
-// ]);
-// console.log(scores)
+const scores = new Map([
+  ["Alice", 90],
+  ["Bob", 85],
+  ["Charlie", 92]
+]);
+console.log(scores)
 
-const map = new Map();
+scores.forEach((value, key) => {
+  console.log(`${key}: ${value}`);
+});
 
-map.set("name", "สมชาย");
-map.set(42, "หมายเลข");
-map.set(true, "บูลีน");
-console.log(map);
-
+for (const [key, value] of scores) {
+  console.log(`${key}: ${value}`);
+}
 // scores.forEach((value, key) => {
 //   console.log(`${key}: ${value}`);
 // });
@@ -59,6 +60,7 @@ console.log(map);
 //   console.log(`${key}: ${value}`);
 // }
 
+// console.log(...scores)
 // console.log([...scores.keys()]);
 // console.log([...scores.values()]);
 
