@@ -112,6 +112,62 @@ const flat = [[1, 2], [3, 4]].flat(); // [1, 2, 3, 4] — ทำให้แบ�
 
 ---
 
+## Mutate vs Immutable — ต่างกันที่ array ตัวเดิมเปลี่ยนหรือไม่
+
+method บางตัวแก้ไข array ตัวเดิมโดยตรง (mutate) ส่วนบางตัวสร้าง array ใหม่ขึ้นมาโดยไม่แตะของเดิม (immutable) ซึ่งมีผลต่อการทำงานมากโดยเฉพาะใน React
+
+### `.sort()` / `.reverse()` — แก้ array ตัวเดิม (mutate)
+
+```js
+const nums = [3, 1, 2];
+
+const sorted = nums.sort();
+console.log(sorted); // [1, 2, 3]
+console.log(nums);   // [1, 2, 3] ← ตัวเดิมเปลี่ยนด้วย!
+console.log(sorted === nums); // true ← เป็น reference เดียวกัน
+```
+
+### `.toSorted()` / `.toReversed()` — สร้าง array ใหม่ ตัวเดิมไม่เปลี่ยน (immutable)
+
+```js
+const nums = [3, 1, 2];
+
+const sorted = nums.toSorted();
+console.log(sorted); // [1, 2, 3]
+console.log(nums);   // [3, 1, 2] ← ตัวเดิมยังอยู่ครบ!
+console.log(sorted === nums); // false ← คนละ reference
+```
+
+### ทำไมถึงสำคัญ? — React และ State Management
+
+ใน React ถ้า mutate array ตัวเดิม React จะไม่รู้ว่า state เปลี่ยน เพราะ reference ยังเป็นตัวเดิม ทำให้ UI ไม่ re-render
+
+```js
+// ❌ React ไม่ re-render — reference เดิม
+const handleSort = () => {
+    items.sort();
+    setItems(items); // React มองว่าไม่มีอะไรเปลี่ยน
+};
+
+// ✅ ใช้ toSorted — ได้ array ใหม่ React เห็นว่าเปลี่ยน
+const handleSort = () => {
+    setItems(items.toSorted());
+};
+```
+
+### ตารางเปรียบเทียบ Mutate vs Immutable
+
+| Mutate (แก้ของเดิม) | Immutable (สร้างใหม่) | หน้าที่              |
+| ------------------- | --------------------- | -------------------- |
+| `.sort()`           | `.toSorted()`         | จัดเรียง             |
+| `.reverse()`        | `.toReversed()`       | กลับลำดับ            |
+| `.splice()`         | `.toSpliced()`        | ลบ / แทรก / แทนที่   |
+| `arr[i] = x`        | `.with(i, x)`         | แก้ไขค่า index ที่ i |
+
+> **คำแนะนำ:** ใช้ immutable method เป็นหลัก โดยเฉพาะใน React หรือ framework ที่ track state ด้วย reference
+
+---
+
 ## แปลงเป็น String
 
 ```js
