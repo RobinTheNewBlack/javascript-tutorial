@@ -44,6 +44,13 @@
 // ]);
 // console.log(scores)
 
+const map = new Map();
+
+map.set("name", "สมชาย");
+map.set(42, "หมายเลข");
+map.set(true, "บูลีน");
+console.log(map);
+
 // scores.forEach((value, key) => {
 //   console.log(`${key}: ${value}`);
 // });
@@ -160,7 +167,7 @@
 // const newArr = arr.map((num) => num * 2);
 // console.log(newArr);
 
-const strMOck = "Hello World";
-strMOck.forEach((char) => {
-  console.log(char);
-});
+// const strMOck = "Hello World";
+// strMOck.forEach((char) => {
+//   console.log(char);
+// });

@@ -219,6 +219,7 @@ map.set("name", "สมชาย");
 map.set(42, "หมายเลข");
 map.set(true, "บูลีน");
 
+console.log(map); // Map(3) { 'name' => 'สมชาย', 42 => 'หมายเลข', true => 'บูลีน' }
 console.log(map.get("name")); // "สมชาย"
 console.log(map.get(42)); // "หมายเลข"
 console.log(map.size); // 3
@@ -242,7 +243,7 @@ scores.forEach((value, key) => console.log(`${key}: ${value}`));
 for (const [key, value] of scores) {
     console.log(`${key}: ${value}`);
 }
-
+console.log(scores); // Map(3) { 'Alice' => 90, 'Bob' => 85, 'Charlie' => 92 }
 console.log([...scores.keys()]); // ["Alice", "Bob", "Charlie"]
 console.log([...scores.values()]); // [90, 85, 92]
 console.log([...scores.entries()]); // [["Alice", 90], ...]
