@@ -22,6 +22,7 @@
 - [Object Methods](docs/data-manipulation/object-methods.md)
 - [Destructuring](docs/data-manipulation/destructure.md)
 - [Spread & Rest Operators](docs/data-manipulation/spread-rest.md)
+- [Math](docs/data-manipulation/math.md)
 
 ## 3.Function
 

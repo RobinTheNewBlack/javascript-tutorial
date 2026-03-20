@@ -59,6 +59,32 @@ const removed = arr.splice(1, 2); // removed = ["x", "z"], arr = ["a", "d"]
 
 ---
 
+## เข้าถึงสมาชิก
+
+`array.at(index)` — เข้าถึงสมาชิกด้วย index บวกหรือลบก็ได้ (index ลบนับจากท้าย)
+
+```js
+const fruits = ["แอปเปิ้ล", "กล้วย", "ส้ม", "มะม่วง"];
+
+fruits.at(0);  // "แอปเปิ้ล" — ตัวแรก
+fruits.at(1);  // "กล้วย"
+fruits.at(-1); // "มะม่วง" — ตัวสุดท้าย
+fruits.at(-2); // "ส้ม" — ตัวรองสุดท้าย
+fruits.at(99); // undefined — เกิน length
+```
+
+เทียบกับวิธีเก่า:
+
+```js
+// ❌ verbose
+const last = fruits[fruits.length - 1];
+
+// ✅ ชัดเจนกว่า
+const last = fruits.at(-1);
+```
+
+---
+
 ## ค้นหา
 
 ```js
@@ -125,6 +151,13 @@ const sorted = nums.sort();
 console.log(sorted); // [1, 2, 3]
 console.log(nums);   // [1, 2, 3] ← ตัวเดิมเปลี่ยนด้วย!
 console.log(sorted === nums); // true ← เป็น reference เดียวกัน
+
+const letters = ["c", "a", "b"];
+
+const reversed = letters.reverse();
+console.log(reversed); // ["b", "a", "c"]
+console.log(letters);  // ["b", "a", "c"] ← ตัวเดิมเปลี่ยนด้วย!
+console.log(reversed === letters); // true ← เป็น reference เดียวกัน
 ```
 
 ### `.toSorted()` / `.toReversed()` — สร้าง array ใหม่ ตัวเดิมไม่เปลี่ยน (immutable)
@@ -136,6 +169,13 @@ const sorted = nums.toSorted();
 console.log(sorted); // [1, 2, 3]
 console.log(nums);   // [3, 1, 2] ← ตัวเดิมยังอยู่ครบ!
 console.log(sorted === nums); // false ← คนละ reference
+
+const letters = ["c", "a", "b"];
+
+const reversed = letters.toReversed();
+console.log(reversed); // ["b", "a", "c"]
+console.log(letters);  // ["c", "a", "b"] ← ตัวเดิมยังอยู่ครบ!
+console.log(reversed === letters); // false ← คนละ reference
 ```
 
 ### ทำไมถึงสำคัญ? — React และ State Management
