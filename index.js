@@ -265,9 +265,9 @@
 // const user = users.find(user => user.id === 2);
 // console.log(user)
 
-const ages = [15, 22, 18, 30];
+// const ages = [15, 22, 18, 30];
 
-const hasChild = ages.some(age => age < 18);
-const allAdults = ages.every(age => age >= 18);
-console.log(hasChild)
-console.log(allAdults)
+// const hasChild = ages.some(age => age < 18);
+// const allAdults = ages.every(age => age >= 18);
+// console.log(hasChild)
+// console.log(allAdults)
