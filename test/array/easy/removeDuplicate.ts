@@ -1,5 +1,5 @@
 /*
-  26. Remove Duplicates from Sorted Array
+  Topics : Array, Two Pointers
 
   Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. 
   The relative order of the elements should be kept the same.
@@ -20,12 +20,9 @@
 */
 
 function removeDuplicates(nums: number[]): number {
-    if (nums.length === 0) return 0;
-
     let p: number = 0;
-
-    for (let i = 0; i < nums.length; i++) {
-        if (nums[p] !== nums[i]) {
+    for (let i = 1; i < nums.length; i++) {
+        if (nums[i] !== nums[p]) {
             p++;
             nums[p] = nums[i];
         }

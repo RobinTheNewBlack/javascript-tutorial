@@ -1,5 +1,5 @@
 /*
-    27. Remove Element
+    Topics : Array, Two Pointers
 
     Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. 
     The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.
@@ -21,14 +21,16 @@
     Note that the five elements can be returned in any order.
     It does not matter what you leave beyond the returned k (hence they are underscores).
 */
+
 function removeElement(nums: number[], val: number): number {
-    let count = 0;
+    let p: number = 0;
     for (const num of nums) {
         if (num !== val) {
-            count++;
+            nums[p] = num;
+            p++;
         }
     }
-    return count;
+    return p;
 }
 
 console.log(removeElement([3, 2, 2, 3], 3));

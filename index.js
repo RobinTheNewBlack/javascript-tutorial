@@ -271,3 +271,54 @@
 // const allAdults = ages.every(age => age >= 18);
 // console.log(hasChild)
 // console.log(allAdults)
+
+// const newArr = new Array(5);
+// console.log(newArr)
+
+// const nums = Array.of(1, 2, 3, 4, 5);
+// console.log(nums)
+
+// const fromString = Array.from("Hello");
+// console.log(fromString)
+
+// const fromMap = Array.from(new Map([["a", 1], ["b", 2], ["c", 3]]));
+// console.log(fromMap)
+
+// const fruits = ["Apple", "Banana", "Cherry"];
+
+// fruits.push("Mango");
+// console.log(fruits)
+
+// fruits.pop();
+
+// fruits.unshift("Strawberry");
+// console.log(fruits)
+
+// fruits.shift();
+// console.log(fruits)
+
+// fruits.splice(1, 2);
+// console.log(fruits)
+
+// const numbers = [10, 20, 5, 3, 19, 17, 8, 25];
+
+// numbers.sort((a, b) => a - b);
+// console.log(numbers)
+
+// numbers.sort((a, b) => b - a);
+// console.log(numbers)
+
+// numbers.reverse();
+// console.log(numbers)
+
+// console.log(numbers)
+// console.log(fruits)
+
+// const merged = numbers.concat(fruits);
+// console.log(merged)
+
+// const multiConcat = numbers.concat(fruits, ["Mango", "Pineapple"]);
+// console.log(multiConcat)
+
+const heightInput = [1, 8, 6, 2, 5, 4, 8, 3, 7];
+

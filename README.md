@@ -19,6 +19,7 @@
 ## 2.Data Manipulation
 
 - [Array Methods](docs/data-manipulation/array-methods.md)
+- [String Methods](docs/data-manipulation/string-methods.md)
 - [Object Methods](docs/data-manipulation/object-methods.md)
 - [Destructuring](docs/data-manipulation/destructure.md)
 - [Spread & Rest Operators](docs/data-manipulation/spread-rest.md)

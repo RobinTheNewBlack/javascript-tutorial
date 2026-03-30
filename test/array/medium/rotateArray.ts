@@ -1,4 +1,6 @@
 /*
+  189. Rotate Array (medium)
+  
   Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
 
   Example 1:
@@ -31,7 +33,7 @@ function rotate1(nums: number[], k: number): void {
 // optimized solution
 function rotate2(nums: number[], k: number): void {
     const n = nums.length;
-
+    k %= n;
     const reverse = (start: number, end: number): void => {
         while (start < end) {
             [nums[start], nums[end]] = [nums[end], nums[start]];
@@ -44,3 +46,7 @@ function rotate2(nums: number[], k: number): void {
     reverse(0, k - 1);
     reverse(k, n - 1);
 };
+
+function rotate3(nums: number[], k: number): void {
+
+}
