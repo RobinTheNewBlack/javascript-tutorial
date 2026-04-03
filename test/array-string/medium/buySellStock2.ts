@@ -25,7 +25,7 @@
   Output: 0
   Explanation: There is no way to make a positive profit, so we never buy the stock to achieve the maximum profit of 0.
 */
-function maxProfit(prices: number[]): number {
+function maxProfit2(prices: number[]): number {
     let profit: number = 0;
     for (let i = 1; i < prices.length; i++) {
         if (prices[i] > prices[i - 1]) {
